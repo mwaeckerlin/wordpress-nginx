@@ -4,8 +4,5 @@ services:
   wordpress-nginx:
     build: .
     image: mwaeckerlin/wordpress-nginx
-    environment:
-      PHP_FPM_HOST:
-      PHP_FPM_PORT:
     ports:
       - "8123:8080"
