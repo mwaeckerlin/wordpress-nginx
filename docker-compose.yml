@@ -1,31 +1,11 @@
 version: "3.8"
 
 services:
-  wordpress:
+  wordpress-nginx:
     build: .
-    image: mwaeckerlin/wordpress
+    image: mwaeckerlin/wordpress-nginx
+    environment:
+      PHP_FPM_HOST:
+      PHP_FPM_PORT:
     ports:
-      - "8080:8080"
-    depends_on:
-      - php-fpm
-
-  php-fpm:
-    image: mwaeckerlin/wordpress-proxy
-    environment:
-      WORDPRESS_DB_HOST: mysql
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-
-  mysql:
-    image: mariadb:11
-    environment:
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-      MYSQL_ROOT_PASSWORD: change-me
-    volumes:
-      - db-data:/var/lib/mysql
-
-volumes:
-  db-data: {}
+      - "8123:8080"

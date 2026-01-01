@@ -8,4 +8,6 @@ COPY conf /etc/nginx
 FROM mwaeckerlin/nginx
 COPY --from=config /etc/nginx /etc/nginx
 COPY --from=wordpress /root/app /app
+ENV PHP_FPM_HOST="wordpress-php-fpm"
+ENV PHP_FPM_PORT="9000"
 WORKDIR /app
