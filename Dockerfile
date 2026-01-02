@@ -1,6 +1,8 @@
-FROM mwaeckerlin/very-base as wordpress
+FROM mwaeckerlin/very-base AS wordpress
+WORKDIR /app
 ADD https://wordpress.org/latest.tar.gz /tmp/wordpress.tar.gz
-RUN mkdir -p /root && tar xzf /tmp/wordpress.tar.gz -C /root && mv /root/wordpress /root/app
+RUN tar xzf /tmp/wordpress.tar.gz --strip-components=1
+RUN ${ALLOW_USER} wp-content
 
 FROM mwaeckerlin/nginx
-COPY --from=wordpress /root/app /app
+COPY --from=wordpress /app /app
