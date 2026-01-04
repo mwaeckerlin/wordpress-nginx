@@ -1,6 +1,6 @@
 # Minimalistic Secure NGINX Webserver Docker Image for WordPress
 
-This image is about 86MB in size and has no shell, so it is small, fast and secure.
+This image is about 66MB in size and has no shell, so it is small, fast and secure.
 
 Implements an NGINX WordPress server based on [mwaeckerlin/nginx].
 
