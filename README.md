@@ -11,6 +11,7 @@ This is the most lean and secure image for an NGINX WordPress server:
  - no shell, only the server command
  - small attack surface
  - starts as non root user
+ - all PHP files are empty, since they are not needed in NGINX
 
 
 ## Port
