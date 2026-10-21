@@ -21,7 +21,7 @@ Exposes nginx on port `8080`.
 
 ## Configuration
 
-If [mwaeckerlin/wordpress-php-fpm] is not in host `php-fpm` you must set `PHP_FPM_HOST`.
+- `PHP_FPM_HOST`: the host of [mwaeckerlin/wordpress-php-fpm], default: `wordpress-php-fpm`, the service name in the examples. A stack that names the service `php-fpm`, the default up to 1.0.1, sets `PHP_FPM_HOST: php-fpm`.
 
 
 ## Persistence and Volume

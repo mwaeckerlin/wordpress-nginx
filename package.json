@@ -1,6 +1,6 @@
 {
   "name": "@mwaeckerlin/wordpress-nginx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build": "docker compose build",
     "start": "docker compose up --build --force-recreate --remove-orphans",
@@ -9,6 +9,6 @@
     "stop": "docker compose down",
     "deploy": "docker compose push",
     "test": "npm run test:image",
-    "test:image": "npm run build && bash tests/image-contract.sh mwaeckerlin/wordpress-nginx"
+    "test:image": "npm run build && bash tests/image-contract.sh mwaeckerlin/wordpress-nginx && bash tests/config-contract.sh mwaeckerlin/wordpress-nginx"
   }
 }

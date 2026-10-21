@@ -6,4 +6,5 @@ RUN find . -name '*.php' -exec sh -c "rm {} && touch {}" \; # Remove all PHP fil
 RUN ${ALLOW_USER} wp-content
 
 FROM mwaeckerlin/nginx
+ENV PHP_FPM_HOST="wordpress-php-fpm"
 COPY --from=wordpress /app /app
